@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+/*初始化*/
+html,body,p,h1,h2,input,button{
+	margin:0;
+	padding:0;
+}
+button{
+	border: 0;
+}
+.wrapper{
+	width: 300px;
+ 	height: 200px;
+  	margin: 100px auto;
+	border: 1px solid #78913f;
+}
+.start,.question,.result{
+	width: 300px;
+	height:200px;
+	display: none;
+}
+.current{
+	display: block;
+}
+.start h1{
+	text-align:center;
+	margin-top:40px;
+	color: #f40;
+}
+.start button{
+	width: 80px; 
+	height: 30px;
+	font-size: 16px;
+	margin: 50px auto;
+	display:block; 
+	border-radius: 20px;
+ 	background:#a3d623;
+ 	color:#fff; 
+ 	cursor:pointer;
+ }
+.question p{
+	font-size: 24px; 
+	color:#f40; 
+	text-align: center; 
+ 	margin: 20px; 
+ 	font-weight:bold;
+ }
+.question input{
+	margin:12px; 
+	cursor:pointer;
+}
+.result h2{
+	text-align:center; 
+	margin-top:30px; 
+	color: #f40;
+}
+.result p{
+	line-height: 100px; 
+	color: green;
+	text-align: center;
+}
+

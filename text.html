@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>性格测试</title>
+	<link rel="stylesheet" type="text/css" href="text.css">	
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="start current">
+			<h1>性格测试</h1>
+			<button>开始</button>
+		</div>
+		<div class="question">
+			<p>第一个问题</p>
+			<input type="radio" name="question" /> 第一个选项, 选我跳到第二题.<br/>
+			<input type="radio" name="question" /> 第二个选项, 选我跳到第三题.<br/>
+			<input type="radio" name="question" /> 第三个选项, 选我跳到第四题.
+		</div>
+		<div class="result">
+			<h2>性格类型</h2>
+			<p></p>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$('.start button').click(function(event) {
+			$('.question').addClass('current').siblings().removeClass('current');
+				game();
+		});
+		function game() {
+			$.get('data.json',function(data){
+				start(data);
+			})
+
+			function start(data) {
+				var index = 0;
+				//答题： 
+				//读取data.question>渲染第一题>绑定事件>第N题>结果
+
+// "selections": [
+//     {
+//         "text": "第一个选项, 选我跳到第二题.",
+//         "next": 1
+//     },
+//     {
+//         "text": "第二个选项, 选我跳到第三题.",
+//         "next": 2
+//     },
+//     {
+//         "text": "第三个选项, 选我跳到第四题.",
+//         "next": 3
+//     }
+// ] 
+
+
+				console.log(data.questions[1]);
+				console.log(data.questions[0].selections[2].next);
+
+				//$(selector).html("<div></div>")
+			};
+			
+		}
+
+	</script>
